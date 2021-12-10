@@ -10,7 +10,7 @@ namespace Catalog.Repositories
         // the -Async suffix indicates that these are asynchronous methods
         // they return tasks<of items>, which tells the program that a task is running, and it doesn't need
         // to wait until the Item is returned to move on
-        // Asynchronous programming is common when interacting with outside party services since they
+        // Asynchronous programming is used here because of the interactions with outside party services since they
         // can be demanding on resources and take time
         Task<Item> GetItemAsync(Guid id);
         Task<IEnumerable<Item>> GetItemsAsync();

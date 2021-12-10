@@ -24,7 +24,7 @@ namespace Catalog.Controllers
         [HttpGet]
         public async Task<IEnumerable<ItemDto>> GetItemsAsync()
         {
-            // we need to wrap the await in () b/c the .Select want to act on it right away
+            // we need to wrap the await in () b/c the .Select wants to act on it right away
             var items = (await repository.GetItemsAsync())
                         .Select( item => item.AsDto());
 
@@ -59,10 +59,7 @@ namespace Catalog.Controllers
 
             await repository.CreateItemAsync(item);
 
-            //this line of code returns the item and a header about where to find the item (i think) 
-            //(yes that is correct)
-            //not too sure what the nameof(GetItem) and new{ id = item.Id} are all about
-            //(the code nameof(GetItem) calls a header, and new { id...} specifies the location of the data in the header)
+            //this line of code returns the item and a header about where to find the item 
             return CreatedAtAction(nameof(GetItemAsync), new { id = item.Id }, item.AsDto());
         }
 
@@ -80,6 +77,9 @@ namespace Catalog.Controllers
             // the word with has something to do with records i think
             // it copies what is already existing and allows us to modify its properties at initialization
             // allows us to work with immutable objects
+
+            // here we take advantage of using records. we are able to work with an otherwise immutable object
+            // we are copying what already exists and modifying it using the 'with' keyword
             Item updatedItem = existingItem with 
             {
                 Name = itemDto.Name,

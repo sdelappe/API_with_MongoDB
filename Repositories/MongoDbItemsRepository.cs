@@ -25,7 +25,7 @@ namespace Catalog.Repositories
             itemsCollection = database.GetCollection<Item>(collectionName);
         }
 
-        // async in method title and await are syntax sugar to tell .NET5 that it is an asyncronous call
+        // async and await keywords needed
         public async Task CreateItemAsync(Item item)
         {
             await itemsCollection.InsertOneAsync(item);
