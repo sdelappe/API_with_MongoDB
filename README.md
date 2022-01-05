@@ -22,6 +22,6 @@ Examples performed in Postman
 * Return one item using it's id variable: GET /items/{id}
 * Create a new item in the repository: POST /item
 * Editing an existing item: PUT /items/{id}
-*   Body instructions: select 'raw' and set to 'JSON'
+      Body instructions: select 'raw' and set to 'JSON'
 * Deleting an existing item: DELET /items/{id}
 
