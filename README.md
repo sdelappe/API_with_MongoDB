@@ -19,7 +19,7 @@ CRUD Instructions
 Examples performed in Postman
 
 * Return all items: GET /items
-* Return one item using it's id variable: GET /items/{id}
+* Return one item using it's {id}: GET /items/{id}
 * Create a new item in the repository: POST /item
 * Editing an existing item: PUT /items/{id}  (Body instructions: select 'raw' and set to 'JSON')
 * Deleting an existing item: DELET /items/{id}
